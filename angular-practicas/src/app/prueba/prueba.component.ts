@@ -19,6 +19,11 @@ usuario:Persona = {
 }
 
 numero:number = 0;
+text_color:string ='';
+button_change:boolean = false;
+
+img:string = 'https://images.pexels.com/photos/23947602/pexels-photo-23947602/free-photo-of-amor-gente-mujer-picnic.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+
 
 // Metodos
 incrementar(){
@@ -29,5 +34,8 @@ decrementar(){
   this.numero --; 
 }
 
+mostrarEnConsola(name:string) {
+  console.log(name)
+}
 
 }

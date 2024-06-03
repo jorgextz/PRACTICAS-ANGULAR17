@@ -1,4 +1,3 @@
-<p>prueba works!</p>
 <h1>CURSO ANGULAR</h1>
 
 <!-- interpolacion: -->
@@ -15,5 +14,33 @@
 <button (click)="incrementar()">+</button>
 
 <!-- Enlace de clase (Class Binding) -->
+<div class="mt-2 mr-2">
+    <!-- Otra forma de enlazar la clase en forma de objeto -->
+    <button [class]="{
+        disabled: button_change
+    }" class="btn btn-danger me-2" (click)="text_color= 'text-danger'" >Cambiar a rojo</button>
+    <button [class.disabled]="button_change" class="btn btn-success me-2" (click)="text_color= 'text-success'" >Cambiar a verde</button>
+    <button [class.disabled]="button_change" class="btn btn-primary me-2" (click)="text_color= 'text-primary'" >Cambiar a azul</button>
+    <p class="mt-2" [class]="text_color">Texto que cambia de color</p>
+    <button (click)="button_change= !button_change" class="btn btn-dark" >Desactivar botones</button>
+</div>
 
-<div></div>
+<!-- Enlace de propiedades (Property Binding) -->
+
+<button [disabled]="button_change" class="btn btn-primary mt-2">Boton de Prueba para property binding</button>
+<hr>
+<button (click)="img='https://images.pexels.com/photos/17392875/pexels-photo-17392875/free-photo-of-naturaleza-mujer-caminando-verano.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'" class="btn btn-primary mb-2 mx-2">Imagen 2</button>
+
+<button (click)="img='https://images.pexels.com/photos/5047450/pexels-photo-5047450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'" class="btn btn-success mb-2 ">Imagen 3</button>
+<br>
+
+<img [src]="img" alt="">
+
+<!-- Variables de plantilla (Formularios) -->
+<br>
+<input class="mt-2" type="text" placeholder="Ingresa tu nombre" #input_name>
+<br>
+<button class="btn btn-primary mt-2" (click)="mostrarEnConsola(input_name.value)">Imprimir en consola</button>
+
+
+
