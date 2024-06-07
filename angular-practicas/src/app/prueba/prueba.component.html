@@ -42,5 +42,19 @@
 <br>
 <button class="btn btn-primary mt-2" (click)="mostrarEnConsola(input_name.value)">Imprimir en consola</button>
 
+<!-- Directiva IF y ELSE  -->
+
+@if (ActiveAlert) {
+
+    <div class="alert alert-primary mt-2">
+        <P>Se ha enviado el mensaje</P>
+        <BUTTon class="btn btn-dark" (click)="ActiveAlert=!ActiveAlert">Cerrar</BUTTon>
+    </div>
+}
+ @else ( ) {
+    <div>
+        <p class="alert alert-danger mt-2" >Por favor introduzca un nombre</p>
+    </div>
+}
 
 
