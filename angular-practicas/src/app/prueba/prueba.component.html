@@ -57,4 +57,45 @@
     </div>
 }
 
+<!-- Directiva For -->
+
+<h2>Lista de personas:</h2>
+
+<ul>
+    @for (persona of personas; track persona ){
+        <li>{{persona.nombre}} / Edad: {{persona.edad}}</li>
+    }
+</ul>
+
+<!-- Directiva SWITCH -->
+
+<input placeholder="Introduce el Numero" type="text" #daynumber>
+
+@switch (dia) {
+    @case (1){
+        <p>Tu dia es el Domingo!</p>
+    }
+    @case (2){
+        <p>Tu dia es el Lunes!</p>
+    }
+    @case (3){ 
+        <p>Tu dia es el Martes!</p>
+    }
+    @case (4){
+        <p>Tu dia es el Miercoles!</p>
+    }
+    @case (5){
+        <p>Tu dia es el Jueves!</p>
+    }
+    @case (6){
+        <p>Tu dia es el Viernes!</p>
+    }
+    @case (7){
+        <p>Tu dia es el Sabado!</p>
+    }
+}
+
+
+
+
 
