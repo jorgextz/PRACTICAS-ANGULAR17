@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Persona } from '../../persona';
+import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-prueba',
   standalone: true,
-  imports: [],
+  imports: [JsonPipe],
   templateUrl: './prueba.component.html',
   styleUrl: './prueba.component.css'
 })
@@ -33,7 +35,12 @@ img:string = 'https://images.pexels.com/photos/23947602/pexels-photo-23947602/fr
 
 ActiveAlert:boolean= false;
 
-dia:number = 1;
+dia?:number;
+
+persona = {
+  nombre:null,
+  edad: null
+}
 
 
 // Metodos
@@ -48,6 +55,11 @@ decrementar(){
 mostrarEnConsola(name:string) {
   console.log(name);
   this.ActiveAlert= !this.ActiveAlert;
+}
+
+changeDay(day:string){
+ let convertDay = parseInt(day);
+ this.dia = convertDay;
 }
 
 }

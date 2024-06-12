@@ -70,7 +70,10 @@
 <!-- Directiva SWITCH -->
 
 <input placeholder="Introduce el Numero" type="text" #daynumber>
+<br>
+<button class="btn btn-primary mt-2" (click)="changeDay(daynumber.value)">Buscar</button>
 
+@if (dia) { 
 @switch (dia) {
     @case (1){
         <p>Tu dia es el Domingo!</p>
@@ -93,7 +96,23 @@
     @case (7){
         <p>Tu dia es el Sabado!</p>
     }
+    @default {
+        <p>El Numero introducido no corresponde a un dia!</p>
+    }
 }
+}
+
+<!-- Formularios Basados en plantillas -->
+ 
+<br>
+<div class="card mt-2">
+    <div class="card-body">
+
+    </div>
+</div>
+{{ persona | json}}
+
+
 
 
 
