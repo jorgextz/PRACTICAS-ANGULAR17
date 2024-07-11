@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Persona } from '../../persona';
 import { JsonPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-prueba',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, FormsModule],
   templateUrl: './prueba.component.html',
   styleUrl: './prueba.component.css'
 })
@@ -38,12 +39,18 @@ ActiveAlert:boolean= false;
 dia?:number;
 
 persona = {
-  nombre:null,
-  edad: null
+  nombre:'',
+  edad: ''
 }
 
 
 // Metodos
+
+GuardarFormulario(name:string, age:string){
+  this.persona.nombre = name;
+  this.persona.edad = age;
+}
+
 incrementar(){
   this.numero ++; 
 }
@@ -60,6 +67,10 @@ mostrarEnConsola(name:string) {
 changeDay(day:string){
  let convertDay = parseInt(day);
  this.dia = convertDay;
+}
+
+procesar(){
+  console.log(this.persona)
 }
 
 }

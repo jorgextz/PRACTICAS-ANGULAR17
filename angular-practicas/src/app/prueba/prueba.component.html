@@ -15,7 +15,7 @@
 
 <!-- Enlace de clase (Class Binding) -->
 <div class="mt-2 mr-2">
-    <!-- Otra forma de enlazar la clase en forma de objeto -->
+    <!-- Nota: Otra forma de enlazar la clase en forma de objeto -->
     <button [class]="{
         disabled: button_change
     }" class="btn btn-danger me-2" (click)="text_color= 'text-danger'" >Cambiar a rojo</button>
@@ -102,15 +102,53 @@
 }
 }
 
-<!-- Formularios Basados en plantillas -->
+<!-- Formularios (Basados en plantillas) y Validaciones en Formularios-->
  
 <br>
 <div class="card mt-2">
     <div class="card-body">
+        <form (ngSubmit)="procesar()" #contactForm="ngForm">
 
+            <div class="mb-2">
+                <label for="" class="form-label">
+                    Nombre:
+                </label>
+                <!-- Nota: "ngModel" se utiliza para enlazar datos bidireccionalmente entre un elemento del formulario y una propiedad de un componente (sin recargar la pagina) -->
+                 <!-- Es necesario que el input tenga el atributo required para que funcione el valid -->
+                <input type="text" name="nombre" class="form-control" placeholder="Ingrese su nombre aqui" 
+                 [(ngModel)]="persona.nombre" required #name="ngModel">
+
+                <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                    Falta el atributo Nombre
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="" class="form-label">
+                    Edad:
+                </label>
+
+                <input type="number" name="edad" class="form-control" placeholder="Ingrese su Edad aqui" 
+                [(ngModel)]="persona.edad" required #age="ngModel">
+
+                <div class="alert alert-danger mt-2" [hidden]="age.valid || age.pristine">
+                    Falta la Edad
+                </div>
+            </div>
+           
+            <button [disabled]="!contactForm.valid"  class="btn btn-primary mt-2" (click)="GuardarFormulario(name.value, age.value)">Enviar</button>
+        </form>
+            
     </div>
 </div>
-{{ persona | json}}
+<!-- Nota: "name.errors" Me dice que atributos estan presentes en mi etiqueta, y si estos estan activos o inactivos mediante un booleano -->
+{{name.errors | json}}
+
+<hr>
+<!-- Nota: El "valid" me permite saber si alguna regla de validacion se esta cumpliendo, si es false no se estan cumpliendo, en cambio si es true si se cumple -->
+{{name.valid}}
+<br>
+{{contactForm.valid}} 
 
 
 
