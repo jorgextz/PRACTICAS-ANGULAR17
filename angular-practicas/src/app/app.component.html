@@ -1,3 +1,25 @@
 <div class="container">
-    <app-prueba></app-prueba>
+    <H1>CURSO ANGULAR</H1>
+    <div>Caracteristicas del usuario:</div>
+    <div>
+        <form #formPadre = "ngForm" >
+            <div>
+                <label class="form-label">Usuario</label> <br>
+                <input name="usuario" [(ngModel)]="usuario.nombre" class="form-control" type="text">
+            </div>
+
+            <div>
+                <label class="form-label">DNI</label><br>
+                <input name="dni" [(ngModel)]="usuario.dni" class="form-control" type="number">
+            </div>
+
+            <div>
+                <label class="form-label">Edad</label> <br>
+                <input name="edad" [(ngModel)]="usuario.edad" class="form-control" type="number">
+            </div>
+        </form>
+    </div>
+    <app-input-output [(user)]="usuario" ></app-input-output>
 </div>
+
+

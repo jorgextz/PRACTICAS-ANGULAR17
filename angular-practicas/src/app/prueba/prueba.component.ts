@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Persona } from '../../persona';
+import { Persona } from '../../interfaces';
 import { JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 

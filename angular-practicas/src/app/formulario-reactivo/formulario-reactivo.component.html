@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+
+        <form (ngSubmit)="procesar()" [formGroup]="form1">
+            <label class="form-label">
+                Nombre
+            </label>
+            <input class="form-control" type="text" formControlName="name">
+
+            <div class="alert alert-danger mt-2" [hidden]="name?.valid || name?.pristine">
+                Por favor introduzca un nombre!
+            </div>
+
+            <label class="form-label">
+                Email
+            </label>
+            <input type="email" class="form-control" formControlName="email">
+
+            <div class="alert alert-danger mt-2" [hidden]="email?.valid || email?.pristine">
+                @if(email?.errors?.['required']){
+                    <span>Este campo es Obligatorio!</span>
+                }
+                @if (email?.errors?.['email']) {
+                    <span>Introduzca un Email Valido!</span>
+                
+                }
+            </div>
+            
+            <div class="mt-2">
+                <button class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

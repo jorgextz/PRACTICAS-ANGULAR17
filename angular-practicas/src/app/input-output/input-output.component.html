@@ -1,0 +1,22 @@
+<h3 class="mt-4">Componente Hijo</h3>
+(ngSubmit)="procesar(this)"
+<form #formPadre = "ngForm" (change)="procesar(this)">
+    <div>
+        <label class="form-label">Usuario</label> <br>
+        <input name="usuario" [(ngModel)]="nombre" class="form-control" type="text" >
+    </div>
+
+    <div>
+        <label class="form-label">DNI</label><br>
+        <input name="dni" [(ngModel)]="dni" class="form-control" type="number">
+    </div>
+
+    <div>
+        <label class="form-label">Edad</label> <br>
+        <input name="edad" [(ngModel)]="edad" class="form-control" type="number">
+    </div>
+
+</form>
+
+{{user | json}}
+ 
