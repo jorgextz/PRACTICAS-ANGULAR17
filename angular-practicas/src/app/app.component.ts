@@ -6,13 +6,15 @@ import { InputOutputComponent } from "./input-output/input-output.component";
 import { Usuario } from '../interfaces';
 import {Validators, FormGroup, FormBuilder, FormControl} from '@angular/forms'
 import { JsonPipe } from '@angular/common';
+import { MessagesComponent } from "./messages/messages.component";
+import { ListMessagesComponent } from "./list-messages/list-messages.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PruebaComponent, FormsModule, InputOutputComponent, JsonPipe],
+  imports: [RouterOutlet, PruebaComponent, FormsModule, InputOutputComponent, JsonPipe, MessagesComponent, ListMessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -8,3 +8,8 @@ export interface Usuario {
     dni:number;
     edad:number;
 }
+
+export interface Mensajes {
+    title:string;
+    note: string;
+}
