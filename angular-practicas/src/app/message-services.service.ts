@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Mensajes } from '../interfaces';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +19,9 @@ export class MessageServicesService {
 
   addMessage(msj:Mensajes){
     this.messages.push(msj)
+  }
+
+  getMessages(){
+    return this.messages
   }
 }

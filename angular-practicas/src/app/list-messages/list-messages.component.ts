@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { MessageServicesService } from '../message-services.service';
-import { Mensajes } from '../../interfaces';
+import { JsonPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-list-messages',
   standalone: true,
-  imports: [],
+  imports: [JsonPipe, FormsModule],
   templateUrl: './list-messages.component.html',
   styleUrl: './list-messages.component.css'
 })
 export class ListMessagesComponent {
 
-  constructor(msjService:MessageServicesService){}
-
+  constructor(public msjService:MessageServicesService){}
   
 
 }

@@ -1,1 +1,11 @@
-<p>list-messages works!</p>
+<div class="mt-4">
+    <h3>List Messages Component</h3>
+    @for (messages of msjService.messages; track messages.note) {
+        <div class="border-black border-1 border p-lg-2 mt-2">
+            <p><b>Titulo: </b> {{messages.title}}</p>
+            <p><b>Nota: </b> {{messages.note}}</p>
+        </div>
+    }
+</div>
+
+{{msjService.messages | json}}

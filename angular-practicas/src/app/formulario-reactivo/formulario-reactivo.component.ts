@@ -24,7 +24,7 @@ get email(){
 }
 
 form1 = this.fb.group({
-  'name' : ['',Validators.required],
+  'name' : ['',[Validators.required]],
   'email': ['', [Validators.required, Validators.email]]
 })
 

@@ -1,14 +1,13 @@
 <h3>Message Component</h3>
 <form (ngSubmit)="procesar()">
     <div>
-        <input [(ngModel)]="vaciar.titulo" name="titulo" placeholder="Ingrese Titulo" type="text" class="form-control mt-3">
+        <input [(ngModel)]="vaciar.title" name="titulo" placeholder="Ingrese Titulo" type="text" class="form-control mt-3" required>
     </div>
     <div>
-        <input [(ngModel)]="vaciar.nota" name="nota" placeholder="Ingrese Nota" type="text" class="form-control mt-3">
+        <input [(ngModel)]="vaciar.note" name="nota" placeholder="Ingrese Nota" type="text" class="form-control mt-3" required>
     </div>
     
     <button class="btn btn-primary mt-4">Agregar Nota</button>
 </form>
 
 
-{{msjService.messages | json}}

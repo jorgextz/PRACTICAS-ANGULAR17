@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MessageServicesService } from '../message-services.service';
 import { JsonPipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-messages',
@@ -16,15 +16,15 @@ export class MessagesComponent {
   }
 
 vaciar:any = {
-  titulo:'',
-  nota:''
+  title:'',
+  note:''
 }
 
 procesar(){
     this.msjService.addMessage(this.vaciar)
     this.vaciar = {
-      titulo:'',
-      nota:''
+      title:'',
+      note:''
     }
 }
 }
